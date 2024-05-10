@@ -1,229 +1,190 @@
-# 0x1B. C - Sorting algorithms & Big O
-
-## Learning Objectives
-
-### General
-
-* At least four different sorting algorithms
-* What is the Big O notation, and how to evaluate the time complexity of an algorithm
-* How to select the best sorting algorithm for a given input
-* What is a stable sorting algorithm
-## Tasks
-
-## 0. Bubble sort
-
--
-
-
-### Requirements:
-
-Prototype: <code>void bubble_sort(int *array, size_t size);</code>
-You’re expected to print the <code>array</code> after each time you swap two elements (See example below)
-
-Mode: mandatory
-
-File: [0-bubble_sort.c](./0-bubble_sort.c), [0-O](./0-O)
-<hr>
-
-## 1. Insertion sort
-
--
-
-
-### Requirements:
-
-Prototype: <code>void insertion_sort_list(listint_t **list);</code>
-You are not allowed to modify the integer <code>n</code> of a node. You have to swap the nodes themselves.
-You’re expected to print the <code>list</code> after each time you swap two elements (See example below)
-
-Mode: mandatory
-
-File: [1-insertion_sort_list.c](./1-insertion_sort_list.c), [1-O](./1-O)
-<hr>
-
-## 2. Selection sort
-
--
-
-
-### Requirements:
-
-Prototype: <code>void selection_sort(int *array, size_t size);</code>
-You’re expected to print the <code>array</code> after each time you swap two elements (See example below)
-
-Mode: mandatory
-
-File: [2-selection_sort.c](./2-selection_sort.c), [2-O](./2-O)
-<hr>
-
-## 3. Quick sort
-
--
-
-
-### Requirements:
-
-Prototype: <code>void quick_sort(int *array, size_t size);</code>
-You must implement the <code>Lomuto</code> partition scheme.
-The pivot should always be the last element of the partition being sorted.
-You’re expected to print the <code>array</code> after each time you swap two elements (See example below)
-
-Mode: mandatory
-
-File: [3-quick_sort.c](./3-quick_sort.c), [3-O](./3-O)
-<hr>
-
-## 4. Shell sort - Knuth Sequence
-
-- Write a function that sorts an array of integers in ascending order using the Shell sort algorithm, using the Knuth sequence
-### Requirements:
-
-Prototype: <code>void shell_sort(int *array, size_t size);</code>
-You must use the following sequence of intervals (a.k.a the Knuth sequence):
-
-
-n+1 = n * 3 + 1
-1, 4, 13, 40, 121, ...
-
-<code>n+1 = n * 3 + 1</code>
-<code>1, 4, 13, 40, 121, ...</code>
-You’re expected to print the <code>array</code> each time you decrease the interval (See example below).
-
-Mode: #advanced
-
-File: [100-shell_sort.c](./100-shell_sort.c)
-<hr>
-
-## 5. Cocktail shaker sort
-
-- Write a function that sorts a doubly linked list of integers in ascending order using the Cocktail shaker sort algorithm
-### Requirements:
-
-Prototype: <code>void cocktail_sort_list(listint_t **list);</code>
-You are not allowed to modify the integer <code>n</code> of a node. You have to swap the nodes themselves.
-You’re expected to print the <code>list</code> after each time you swap two elements (See example below)
-
-Mode: #advanced
-
-File: [101-cocktail_sort_list.c](./101-cocktail_sort_list.c), [101-O](./101-O)
-<hr>
-
-## 6. Counting sort
-
-- Write a function that sorts an array of integers in ascending order using the Counting sort algorithm
-### Requirements:
-
-Prototype: <code>void counting_sort(int *array, size_t size);</code>
-You can assume that <code>array</code> will contain only numbers <code>&gt;= 0</code>
-You are allowed to use <code>malloc</code> and <code>free</code> for this task
-You’re expected to print your counting array once it is set up (See example below)
-
-
-This array is of size k + 1 where k is the largest number in array
-
-This array is of size <code>k + 1</code> where <code>k</code> is the largest number in <code>array</code>
-
-Mode: #advanced
-
-File: [102-counting_sort.c](./102-counting_sort.c), [102-O](./102-O)
-<hr>
-
-## 7. Merge sort
-
-- Write a function that sorts an array of integers in ascending order using the Merge sort algorithm
-### Requirements:
-
-Prototype: <code>void merge_sort(int *array, size_t size);</code>
-You must implement the top-down merge sort algorithm
-
-
-When you divide an array into two sub-arrays, the size of the left array should always be <= the size of the right array. i.e. {1, 2, 3, 4, 5} -> {1, 2}, {3, 4, 5}
-Sort the left array before the right array
-
-When you divide an array into two sub-arrays, the size of the left array should always be &lt;= the size of the right array. i.e. <code>{1, 2, 3, 4, 5}</code> -&gt; <code>{1, 2}, {3, 4, 5}</code>
-Sort the left array before the right array
-You are allowed to use <code>printf</code>
-You are allowed to use <code>malloc</code> and <code>free</code> only once (only one <strong>call</strong>)
-Output: see example
-
-Mode: #advanced
-
-File: [103-merge_sort.c](./103-merge_sort.c), [103-O](./103-O)
-<hr>
-
-## 8. Heap sort
-
-- Write a function that sorts an array of integers in ascending order using the Heap sort algorithm
-### Requirements:
-
-Prototype: <code>void heap_sort(int *array, size_t size);</code>
-You must implement the <code>sift-down</code> heap sort algorithm
-You’re expected to print the <code>array</code> after each time you swap two elements (See example below)
-
-Mode: #advanced
-
-File: [104-heap_sort.c](./104-heap_sort.c), [104-O](./104-O)
-<hr>
-
-## 9. Radix sort
-
-- Write a function that sorts an array of integers in ascending order using the Radix sort algorithm
-### Requirements:
-
-Prototype: <code>void radix_sort(int *array, size_t size);</code>
-You must implement the <code>LSD</code> radix sort algorithm
-You can assume that <code>array</code> will contain only numbers <code>&gt;= 0</code>
-You are allowed to use <code>malloc</code> and <code>free</code> for this task
-You’re expected to print the <code>array</code> each time you increase your <code>significant digit</code> (See example below)
-
-Mode: #advanced
-
-File: [105-radix_sort.c](./105-radix_sort.c)
-<hr>
-
-## 10. Bitonic sort
-
-- Write a function that sorts an array of integers in ascending order using the Bitonic sort algorithm
-### Requirements:
-
-Prototype: <code>void bitonic_sort(int *array, size_t size);</code>
-You can assume that <code>size</code> will be equal to <code>2^k</code>, where <code>k &gt;= 0</code> (when <code>array</code> is not <code>NULL</code> …)
-You are allowed to use <code>printf</code>
-You’re expected to print the <code>array</code> each time you swap two elements (See example below)
-Output: see example
-
-Mode: #advanced
-
-File: [106-bitonic_sort.c](./106-bitonic_sort.c), [106-O](./106-O)
-<hr>
-
-## 11. Quick Sort - Hoare Partition scheme
-
-- Write a function that sorts an array of integers in ascending order using the Quick sort algorithm
-### Requirements:
-
-Prototype: <code>void quick_sort_hoare(int *array, size_t size);</code>
-You must implement the <code>Hoare</code> partition scheme.
-The pivot should always be the last element of the partition being sorted.
-You’re expected to print the <code>array</code> after each time you swap two elements (See example below)
-
-Mode: #advanced
-
-File: [107-quick_sort_hoare.c](./107-quick_sort_hoare.c), [107-O](./107-O)
-<hr>
-
-## 12. Dealer
-
--
-
-
-### Requirements:
-
-Prototype: <code>void sort_deck(deck_node_t **deck);</code>
-You are allowed to use the C standard library function <code>qsort</code>
-Please use the following data structures:
-
-Mode: #advanced
-
-File: [1000-sort_deck.c](./1000-sort_deck.c), [deck.h](./deck.h)
-<hr>
+# C - Search Algorithms
+
+This was my ALX project on search algorithms. I implemented
+various types of search algorithms and stated the corresponding space/time
+complexities for each.
+
+## Tests :heavy_check_mark:
+
+* [tests](./tests): Folder of test files for all tasks. Provided by ALX.
+
+## Helper Files :raised_hands:
+
+* [listint](./listint): Folder of helper files for task 12, singly linked list
+jump search.
+  * [create_list.c](./listint/create_list.c): C function that creates a `listint_t`
+singly linked list.
+  * [free_list.c](./listint/free_list.c): C function that frees a `listint_t`
+singly linked list.
+  * [print_list.c](./listint/print_list.c): C function that prints the contents
+of a `listint_t` singly linked list.
+
+* [skiplist](./skiplist): Folder of helper files for task 13, singly skipped list
+jump search.
+  * [create_skiplist.c](./skiplist/create_skiplist.c): C function that creates
+a `skiplist_t` singly skipped list.
+  * [free_skiplist.c](./skiplist/free_skiplist.c): C function that frees a
+`skiplist_t` singly skipped list.
+  * [print_skiplist.c](./skiplist/print_skiplist.c): C function that prints the
+contents of a `skiplist_t` singly skipped list.
+
+## Header File :file_folder:
+
+* [search_algos.h](./search_algos.h): Header file containing definitions and
+prototypes for all types and functions written for the project.
+
+Data Structures
+```
+/**
+ * struct listint_s - singly linked list
+ *
+ * @n: Integer
+ * @index: Index of the node in the list
+ * @next: Pointer to the next node
+ *
+ * Description: singly linked list node structure
+ * for ALX project
+ */
+typedef struct listint_s
+{
+    int n;
+    size_t index;
+    struct listint_s *next;
+} listint_t;
+
+/**
+ * struct skiplist_s - Singly linked list with an express lane
+ *
+ * @n: Integer
+ * @index: Index of the node in the list
+ * @next: Pointer to the next node
+ * @express: Pointer to the next node in the express lane
+ *
+ * Description: singly linked list node structure with an express lane
+ * for Holberton project
+ */
+typedef struct skiplist_s
+{
+    int n;
+    size_t index;
+    struct skiplist_s *next;
+    struct skiplist_s *express;
+} skiplist_t;
+```
+
+Function Prototypes
+
+| File                    | Prototype                                                       |
+| ----------------------- | --------------------------------------------------------------- |
+| `0-linear.c`            | `int linear_search(int *array, size_t size, int value);`        |
+| `1-binary.c`            | `int binary_search(int *array, size_t size, int value);`        |
+| `100-jump.c`            | `int jump_search(int *array, size_t size, int value);`          |
+| `102-interpolation.c`   | `int interpolation_search(int *array, size_t size, int value);` |
+| `103-exponential.c`     | `int exponential_search(int *array, size_t size, int value);`   |
+| `104-advanced_binary.c` | `int advanced_binary(int *array, size_t size, int value);`      |
+
+## Tasks :page_with_curl:
+
+* **0. Linear search**
+  * [0-linear.c](./0-linear.c): C function that searches for a value in an array
+  of integers using linear search.
+  * If the value is not present or the array is `NULL`, returns `-1`.
+	* Otherwise, returns the first index where `value` is located.
+
+* **1. Binary search**
+  * [1-binary.c](./1-binary.c): C function that searches for a value in a sorted
+  array of integers using binary search.
+  * Assumes the array is sorted in ascending order and that the value to search
+  for is not repeated in the array.
+  * If the value is not present or the array is `NULL`, returns `-1`.
+	* Otherwise, returns the index where `value` is located.
+
+* **2. Big O #0**
+  * [2-O](./2-O): Text file containing the worst case time complexity of linear
+  search.
+
+* **3. Big O #1**
+  * [3-O](./3-O): Text file containing the worst case space complexity of
+  iterative linear search.
+
+* **4. Big O #2**
+  * [4-O](./4-O): Text file containing worst case case time complexity
+  of binary search.
+
+* **5. Big O #3**
+  * [5-O](./5-O): Text file containing the worst case space complexity
+  of binary search.
+
+* **6. Big O #4**
+  * [6-O](./6-O): Text file containing the space complexity of the following algorithm:
+```
+int **allocate_map(int n, int m)
+{
+    int **map;
+
+    map = malloc(sizeof(int *) * n);
+    for (size_t i = 0; i < n; i++)
+    {
+        map[i] = malloc(sizeof(int) * m);
+		}
+		return (map);
+}
+```
+
+* **7. Jump search**
+  * [100-jump.c](./100-jump.c): C function that searches for a value in a
+  sorted array of integers using jump search.
+  * Uses the square root of the size of the array as the jump step.
+  * Assumes the array is sorted in ascending order and that the value to search
+  for is not repeated in the array.
+  * If the value is not present or the array is `NULL`, returns `-1`.
+	* Otherwise, returns the index where `value` is located.
+
+* **8. Big O #5**
+  * [101-O](./101-O): Text file containing the average case time complexity of
+  jump search in an array of size `n` using `step = sqrt(n)`.
+
+* **9. Interpolation search**
+  * [102-interpolation.c](./102-interpolation.c): C function that searches for
+  a value in a sorted array of integers using interpolation search.
+  * Assumes the array is sorted in ascending order.
+  * If the value is not present or the array is `NULL`, returns `-1`.
+	* Otherwise, returns the first index where `value` is located.
+
+* **10. Exponential search**
+  * [103-exponential.c](./103-exponential.c): C function that searches for a
+  value in a sorted array of integers using exponential search.
+  * Uses powers of 2 as exponential ranges to search the array.
+  * Assumes the array is sorted in ascending order.
+  * If the value is not present or the array is `NULL`, returns `-1`.
+	* Otherwise, returns the first index where `value` is located.
+
+* **11. Advanced binary search**
+  * [104-advanced_binary.c](./104-advanced_binary.c): C function that searches
+  for a value in a sorted array of integers using advanced binary search.
+  * Assumes the array is sorted in ascending order.
+  * If the value is not present or the array is `NULL`, returns `-1`.
+	* Otherwise, returns the first index where `value` is located.
+
+* **12. Jump search in a singly linked list**
+  * [105-jump_list.c](./105-jump_list.c): C function that searches for a value
+  in a `listint_t` sorted singly linked list of integers using jump search.
+  * Uses the square root of the list size as the jump step.
+  * Assumes that the singly linked list is sorted in ascending order.
+	* If the value is not present or the head of the list is `NULL`, returns `NULL`.
+	* Otherwise, returns a pointer to the first node where `value` is located.
+
+* **13. Linear search in a skip list**
+  * [106-linear_skip.c](./106-linear_skip.c): C function that searches for a value
+  in a `skiplist_t` sorted skipped linked list of integers using jump search.
+  * Assumes that the singly linked list is sorted in ascending order.
+	* If the value is not present or the head of the list is `NULL`, returns `NULL`.
+	* Otherwise, returns a pointer to the first node where `value` is located.
+
+* **14. Big O #6**
+  * [107-O](./107-O): Text file containing the average time complexity of jump
+  search in a singly linked list of size `n`, using `step = sqrt(n)`.
+
+* **15. Big O #7**
+  * [108-O](./108-O): Text file containing the average time complexity of jump
+  search in a sorted skipped linked list of of size `n`, using `step = sqrt(n)`.
